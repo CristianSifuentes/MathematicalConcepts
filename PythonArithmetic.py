@@ -1,3 +1,12 @@
+
+# Clear! Below, I present an example of how to delve deeper into the topic of Arithmetic using advanced object-oriented programming concepts, such as classes, inheritance, polymorphism and abstraction. In this case, we are going to create a hierarchy of classes for different arithmetic operations that represent the four basic operations (addition, subtraction, multiplication and division), using abstraction and polymorphism.
+
+# Key Concepts:
+# Abstraction: Let's create an abstract base class to represent a generic arithmetic operation.
+# Inheritance: Specific operations such as addition, subtraction, multiplication and division will inherit from this base class.
+# Polymorphism: Each child class will have its own implementation of the method to perform the arithmetic operation, but they will all share the same interface.
+# Operator overloading: We will implement operator overloading to allow the use of arithmetic operators (+, -, *, /) between objects.
+
 from abc import ABC, abstractmethod
 
 # Clase abstracta que representa una operación aritmética
@@ -81,3 +90,31 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# Code explanation:
+# Abstraction:
+
+# The OperacionArithmetica class is an abstract class that defines an abstract method operate(). This means that any subclass that inherits from this class must implement this method.
+# The class contains the attributes value1 and value2, which represent the operands of the arithmetic operations.
+# Inheritance:
+
+# The Addition, Subtraction, Multiplication and Division classes inherit from OperacionAritmetica and provide their own implementations of the operate() method.
+# Polymorphism:
+
+# Thanks to abstraction, all arithmetic operations share the same interface (operate()), which allows us to treat objects of these classes interchangeably in situations such as operator overloading.
+# This is clearly seen when we add, subtract, multiply or divide two operations with each other, which demonstrates polymorphism.
+# Operator overload:
+
+# We have overloaded the +, -, * and / operators to allow addition, subtraction, multiplication and division between objects of type ArithmeticOperation. Each of these operators calls the operate() function of the corresponding objects to perform the operations.
+# Exception handling:
+
+# In the Division class, a check is included to prevent division by zero. If you try to divide by zero, an error message is returned instead of throwing an exception.
+
+
+
+# Advantages of this approach:
+# Extensibility: We can add new arithmetic operations without modifying the existing code. For example, we could easily implement a class for potentiation or square root.
+# Reusability: Base classes and shared methods allow code to be more reusable.
+# Maintenance: It is easier to maintain, since any change to the base class affects all operations consistently.
+# This example shows how you can combine advanced object-oriented programming (OOP) concepts in Python to create a flexible and scalable system that goes deep into arithmetic.
